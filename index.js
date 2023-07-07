@@ -34,8 +34,8 @@ io.on("connection", (socket) => {
   socket.on("player:keys-move", ({pressedKeys, currentKey, id}) => {
     socket.broadcast.emit("player:keys-move", {pressedKeys, currentKey, id});
   });
-  socket.on("player:shot", ({shotUser, id}) => {
-    socket.broadcast.emit('player:shot', {shotUser, id});
+  socket.on("player:shot", ({shotUser, playerName, id}) => {
+    socket.broadcast.emit('player:shot', {shotUser, playerName, id});
   });
   socket.on('player:leave', (leavingUserId) => {
     socket.broadcast.emit('player:leave', {id: leavingUserId});
